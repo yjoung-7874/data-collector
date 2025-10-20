@@ -1,0 +1,3 @@
+use realsense_db
+show collections;
+db.frames.find().pretty();

@@ -1,0 +1,33 @@
+cmake_minimum_required(VERSION 3.15)
+
+set(CMAKE_CXX_STANDARD 17)
+
+find_package(Threads REQUIRED)
+#find_package(mongoc-1.0 REQUIRED)
+#find_package(mongocxx REQUIRED)
+find_package(realsense2 REQUIRED)
+#find_package(cppzmq REQUIRED)
+#find_package(absl REQUIRED)
+find_package(OpenCV REQUIRED)
+
+add_subdirectory(util/abseil-cpp)
+#set(_MONGOCXX mongo::mongocxx_static)
+#set(_MONGOC mongo::mongoc_static)
+set(_REALSENSE realsense2::realsense2)
+#set(_CPPZMQ cppzmq)
+set(_ABSL absl::status absl::strings absl::statusor absl::base)
+set(_OPENCV ${OpenCV_LIBS})
+
+#message(STATUS "Using mongocxx     : ${mongocxx_VERSION}")
+#message(STATUS "Using mongoc       : ${mongoc-1.0_VERSION}")
+message(STATUS "Using realsense2   : ${realsense2_VERSION}")
+#message(STATUS "Using cppzmq       : ${cppzmq_VERSION}")
+message(STATUS "Using absl         : ${absl_VERSION}")
+message(STATUS "Using OpenCV       : ${OpenCV_VERSION}")
+
+#message(STATUS "mongocxx Include dirs     : ${mongocxx_INCLUDE_DIRS}")
+#message(STATUS "mongoc Include dirs       : ${mongoc-1.0_INCLUDE_DIRS}")
+message(STATUS "realsense2 Include dirs   : ${realsense2_INCLUDE_DIRS}")
+#message(STATUS "cppzmq Include dirs       : ${cppzmq_INCLUDE_DIRS}")
+message(STATUS "absl Include dirs         : ${absl_INCLUDE_DIRS}")
+message(STATUS "OpenCV Include dirs       : ${OpenCV_INCLUDE_DIRS}")
